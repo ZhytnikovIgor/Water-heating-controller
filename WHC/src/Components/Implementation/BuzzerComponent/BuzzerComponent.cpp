@@ -6,9 +6,8 @@ BuzzerComponent::BuzzerComponent(int buzzerConnectionPinNumber) : _buzzerConnect
 }
 void BuzzerComponent::PlayMelody()
 {
-    tone(_buzzerConnectionPinNumber, 1000);
-}
-void BuzzerComponent::StopMelody()
-{
+    tone(_buzzerConnectionPinNumber, 500);
+    delay(500);
     noTone(_buzzerConnectionPinNumber);
+    delay(500);
 }

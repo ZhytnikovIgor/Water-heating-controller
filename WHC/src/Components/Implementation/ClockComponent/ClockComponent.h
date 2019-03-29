@@ -1,5 +1,4 @@
-#ifndef ClockComponent_h
-#define ClockComponent_h
+#pragma once
 #include <RTClib.h>
 #include "..\..\Interfaces\IClockComponent.h"
 
@@ -17,5 +16,3 @@ class ClockComponent : public IClockComponent
     uint8_t GetMonth();
     uint16_t GetYear();
 };
-
-#endif
