@@ -1,13 +1,13 @@
 #include "BuzzerComponent.h"
 
-BuzzerComponent::BuzzerComponent(int buzzerConnectionPinNumber) : _buzzerConnectionPinNumber(buzzerConnectionPinNumber)
+BuzzerComponent::BuzzerComponent(int connectionPinNumber) : _connectionPinNumber(connectionPinNumber)
 {
-    pinMode(_buzzerConnectionPinNumber, OUTPUT);
+    pinMode(_connectionPinNumber, OUTPUT);
 }
 void BuzzerComponent::PlayMelody()
 {
-    tone(_buzzerConnectionPinNumber, 500);
+    tone(_connectionPinNumber, 500);
     delay(500);
-    noTone(_buzzerConnectionPinNumber);
+    noTone(_connectionPinNumber);
     delay(500);
 }

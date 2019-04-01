@@ -5,9 +5,9 @@
 class BuzzerComponent : public IBuzzerComponent
 {
   private:
-    int _buzzerConnectionPinNumber;
+    int _connectionPinNumber;
 
   public:
-    BuzzerComponent(int buzzerConnectionPinNumber);
+    BuzzerComponent(int connectionPinNumber);
     void PlayMelody();
 };
