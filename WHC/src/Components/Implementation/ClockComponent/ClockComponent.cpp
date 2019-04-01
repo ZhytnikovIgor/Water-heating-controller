@@ -1,5 +1,10 @@
+#include <Wire.h>
 #include "ClockComponent.h"
 
+ClockComponent::ClockComponent()
+{
+    Wire.begin();
+}
 void ClockComponent::SetTime(uint16_t year, uint8_t month, uint8_t day, uint8_t hour, uint8_t minute, uint8_t second)
 {
     _realTimeClock.adjust(DateTime(DateTime(year, month, day, hour, minute, second).unixtime()));

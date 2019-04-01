@@ -9,6 +9,7 @@ class ClockComponent : public IClockComponent
     RTC_DS3231 _realTimeClock;
 
   public:
+    ClockComponent();
     void SetTime(uint16_t year, uint8_t month, uint8_t day, uint8_t hour = 0, uint8_t minute = 0, uint8_t second = 0);
     uint8_t GetHour();
     uint8_t GetMinute();
