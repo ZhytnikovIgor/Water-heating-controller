@@ -1,4 +1,3 @@
-#include <Wire.h>
 #include "ClockComponent.h"
 
 ClockComponent::ClockComponent()

@@ -1,4 +1,5 @@
 #pragma once
+#include <Wire.h>
 #include <RTClib.h>
 #include "..\..\Interfaces\IClockComponent.h"
 
