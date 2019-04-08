@@ -2,6 +2,7 @@
 #include "..\..\Interfaces\ILoggerService.h"
 #include "..\..\..\Services\Interfaces\IClockService.h"
 #include "..\..\..\Services\Interfaces\ISecureDigitalCardService.h"
+#include "..\..\..\Infrastructure\Classes\StringFormatter\StringFormatter.h"
 
 class LoggerService : public ILoggerService
 {

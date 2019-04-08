@@ -2,11 +2,12 @@
 
 String LoggerService::CreateLogMessage(String logType, String message)
 {
-    String logMessage = "{logTime},{logType},\"{message}\"";
-    logMessage.replace("{logTime}", _clockService->GetDateTimeString());
-    logMessage.replace("{logType}", logType);
-    logMessage.replace("{message}", message);
-    return logMessage;
+    StringFormatter formatter("{logTime},{logType},\"{message}\"");
+    formatter.SetValue("{logTime}", _clockService->GetDateTimeString());
+    formatter.SetValue("{logType}", logType);
+    formatter.SetValue("{message}", message);
+
+    return formatter.GetFormattedMessage();
 }
 
 LoggerService::LoggerService(String fileName, IClockService *clockService, ISecureDigitalCardService *secureDigitalCardService) : _fileName(fileName),
