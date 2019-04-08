@@ -2,6 +2,7 @@
 #include <stdint.h>
 #include "..\..\Interfaces\IClockService.h"
 #include "..\..\..\Components\Interfaces\IClockComponent.h"
+#include "..\..\..\Infrastructure\Classes\StringFormatter\StringFormatter.h"
 
 class ClockService : public IClockService
 {
@@ -11,7 +12,5 @@ class ClockService : public IClockService
 
   public:
     ClockService(IClockComponent *clockComponent);
-    String GetDateString();
-    String GetTimeString(bool appendSeconds = true);
-    String GetDateTimeString();
+    String GetDateTimeString(String pattern);
 };
