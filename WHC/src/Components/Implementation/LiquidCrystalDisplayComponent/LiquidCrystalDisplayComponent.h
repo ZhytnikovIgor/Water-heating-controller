@@ -1,5 +1,4 @@
 #pragma once
-#include <stdint.h>
 #include <Arduino.h>
 #include <TouchScreen.h>
 #include <Adafruit_TFTLCD.h>

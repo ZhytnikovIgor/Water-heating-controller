@@ -4,10 +4,10 @@
 #include "..\..\Infrastructure\Structures\Point\Point.h"
 #include "..\..\Infrastructure\Enumerations\PageDirection.h"
 
-class ILiquidCrystalDisplayComponent
+class ILiquidCrystalDisplayService
 {
   public:
-    virtual ~ILiquidCrystalDisplayComponent(){};
+    virtual ~ILiquidCrystalDisplayService(){};
     virtual bool IsTouchScreenPressed() = 0;
     virtual Point GetTouchPoint(PageDirection direction) = 0;
     virtual void SetRotation(PageDirection direction) = 0;
