@@ -9,7 +9,8 @@ class ILiquidCrystalDisplayComponent
   public:
     virtual ~ILiquidCrystalDisplayComponent(){};
     virtual bool IsTouchScreenPressed() = 0;
-    virtual Point GetTouchPoint(PageDirection direction) = 0;
+    virtual Point GetRawTouchPoint() = 0;
+    virtual Point GetMappedTouchPoint(Point rawTouchPoint, PageDirection direction) = 0;
     virtual void SetRotation(PageDirection direction) = 0;
     virtual void FillScreen(uint16_t color) = 0;
     virtual void FillRectangle(int16_t x, int16_t y, int16_t width, int16_t height, uint16_t color) = 0;

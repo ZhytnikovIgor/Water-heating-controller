@@ -5,9 +5,13 @@ bool LiquidCrystalDisplayService::IsTouchScreenPressed()
 {
     _liquidCrystalDisplayComponent->IsTouchScreenPressed();
 }
-Point LiquidCrystalDisplayService::GetTouchPoint(PageDirection direction)
+Point LiquidCrystalDisplayService::GetRawTouchPoint()
 {
-    _liquidCrystalDisplayComponent->GetTouchPoint(direction);
+    _liquidCrystalDisplayComponent->GetRawTouchPoint();
+}
+Point LiquidCrystalDisplayService::GetMappedTouchPoint(Point rawTouchPoint, PageDirection direction)
+{
+    _liquidCrystalDisplayComponent->GetMappedTouchPoint(rawTouchPoint, direction);
 }
 void LiquidCrystalDisplayService::SetRotation(PageDirection direction)
 {

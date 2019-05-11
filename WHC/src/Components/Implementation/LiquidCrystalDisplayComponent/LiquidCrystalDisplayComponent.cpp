@@ -37,37 +37,41 @@ bool LiquidCrystalDisplayComponent::IsTouchScreenPressed()
 {
     return _touchScreen.getPoint().z > _touchScreen.pressureThreshhold;
 }
-Point LiquidCrystalDisplayComponent::GetTouchPoint(PageDirection direction)
+Point LiquidCrystalDisplayComponent::GetRawTouchPoint()
 {
     TSPoint touchPoint = _touchScreen.getPoint();
+    return Point(touchPoint.x, touchPoint.y, touchPoint.z);
+}
+Point LiquidCrystalDisplayComponent::GetMappedTouchPoint(Point rawTouchPoint, PageDirection direction)
+{
     Point resultTouchPoint;
 
     switch (direction)
     {
     case PageDirection::Row:
-        resultTouchPoint = Point(map(touchPoint.y, _yMinimum, _yMaximum, 0, _displayHeight - 1),
-                                 map(touchPoint.x, _xMaximum, _xMinimum, 0, _displayWidth - 1),
-                                 touchPoint.z);
+        resultTouchPoint = Point(map(rawTouchPoint.Y, _yMinimum, _yMaximum, 0, _displayHeight - 1),
+                                 map(rawTouchPoint.X, _xMaximum, _xMinimum, 0, _displayWidth - 1),
+                                 rawTouchPoint.Z);
         break;
     case PageDirection::RowReverse:
-        resultTouchPoint = Point(map(touchPoint.y, _yMaximum, _yMinimum, 0, _displayHeight - 1),
-                                 map(touchPoint.x, _xMinimum, _xMaximum, 0, _displayWidth - 1),
-                                 touchPoint.z);
+        resultTouchPoint = Point(map(rawTouchPoint.Y, _yMaximum, _yMinimum, 0, _displayHeight - 1),
+                                 map(rawTouchPoint.X, _xMinimum, _xMaximum, 0, _displayWidth - 1),
+                                 rawTouchPoint.Z);
         break;
     case PageDirection::Column:
-        resultTouchPoint = Point(map(touchPoint.x, _xMaximum, _xMinimum, 0, _displayWidth - 1),
-                                 map(touchPoint.y, _yMaximum, _yMinimum, 0, _displayHeight - 1),
-                                 touchPoint.z);
+        resultTouchPoint = Point(map(rawTouchPoint.X, _xMaximum, _xMinimum, 0, _displayWidth - 1),
+                                 map(rawTouchPoint.Y, _yMaximum, _yMinimum, 0, _displayHeight - 1),
+                                 rawTouchPoint.Z);
         break;
     case PageDirection::ColumnReverse:
-        resultTouchPoint = Point(map(touchPoint.x, _xMinimum, _xMaximum, 0, _displayWidth - 1),
-                                 map(touchPoint.y, _yMinimum, _yMaximum, 0, _displayHeight - 1),
-                                 touchPoint.z);
+        resultTouchPoint = Point(map(rawTouchPoint.X, _xMinimum, _xMaximum, 0, _displayWidth - 1),
+                                 map(rawTouchPoint.Y, _yMinimum, _yMaximum, 0, _displayHeight - 1),
+                                 rawTouchPoint.Z);
         break;
     default:
-        resultTouchPoint = Point(touchPoint.x,
-                                 touchPoint.y,
-                                 touchPoint.z);
+        resultTouchPoint = Point(rawTouchPoint.X,
+                                 rawTouchPoint.Y,
+                                 rawTouchPoint.Z);
         break;
     }
 

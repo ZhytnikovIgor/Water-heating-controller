@@ -33,7 +33,8 @@ class LiquidCrystalDisplayComponent : public ILiquidCrystalDisplayComponent
                                   uint16_t receivingPlate,
                                   uint16_t port);
     bool IsTouchScreenPressed();
-    Point GetTouchPoint(PageDirection direction);
+    Point GetRawTouchPoint();
+    Point GetMappedTouchPoint(Point rawTouchPoint, PageDirection direction);
     void SetRotation(PageDirection direction);
     void FillScreen(uint16_t color);
     void FillRectangle(int16_t x, int16_t y, int16_t width, int16_t height, uint16_t color);
