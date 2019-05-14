@@ -4,10 +4,10 @@
 
 class LiquidCrystalDisplayService : public ILiquidCrystalDisplayService
 {
-  private:
+private:
     ILiquidCrystalDisplayComponent *_liquidCrystalDisplayComponent;
 
-  public:
+public:
     LiquidCrystalDisplayService(ILiquidCrystalDisplayComponent *liquidCrystalDisplayComponent);
     bool IsTouchScreenPressed();
     Point GetRawTouchPoint();

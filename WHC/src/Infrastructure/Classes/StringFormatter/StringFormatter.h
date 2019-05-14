@@ -3,10 +3,10 @@
 
 class StringFormatter
 {
-  private:
+private:
     String _pattern;
 
-  public:
+public:
     StringFormatter(String pattern);
     void SetValue(String key, String value);
     String GetFormattedMessage();

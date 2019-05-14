@@ -2,7 +2,7 @@
 
 class IThermometerComponent
 {
-  public:
+public:
     virtual ~IThermometerComponent(){};
     virtual float GetTemperature() = 0;
 };

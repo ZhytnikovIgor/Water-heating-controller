@@ -6,11 +6,11 @@
 
 class PageManager : public IPageManager
 {
-  private:
+private:
     IPage *_currentPage;
     IPageContext *_pageContext;
 
-  public:
+public:
     PageManager(ILiquidCrystalDisplayService *liquidCrystalDisplayService);
     void SetCurrentPage(IPage *page);
     void RenderCurrentPage();

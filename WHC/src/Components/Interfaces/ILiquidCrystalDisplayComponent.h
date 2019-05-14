@@ -6,7 +6,7 @@
 
 class ILiquidCrystalDisplayComponent
 {
-  public:
+public:
     virtual ~ILiquidCrystalDisplayComponent(){};
     virtual bool IsTouchScreenPressed() = 0;
     virtual Point GetRawTouchPoint() = 0;

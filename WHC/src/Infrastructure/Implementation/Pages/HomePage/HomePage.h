@@ -7,11 +7,11 @@
 
 class HomePage : public IPage
 {
-  private:
+private:
     IPageContext *_pageContext;
     Button _testButton;
 
-  public:
+public:
     HomePage(IPageContext *pageContext);
     void Render();
     void HandleTouch(Point rawTouchPoint);

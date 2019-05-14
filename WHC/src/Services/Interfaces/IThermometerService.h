@@ -2,7 +2,7 @@
 
 class IThermometerService
 {
-  public:
+public:
     virtual ~IThermometerService(){};
     virtual float GetThermometerTemperature() = 0;
 };

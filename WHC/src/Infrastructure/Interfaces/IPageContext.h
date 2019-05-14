@@ -4,7 +4,7 @@
 
 class IPageContext
 {
-  public:
+public:
     virtual ~IPageContext(){};
     virtual ILiquidCrystalDisplayService *GetLiquidCrystalDisplayService() = 0;
     virtual IPageManager *GetPageManager() = 0;

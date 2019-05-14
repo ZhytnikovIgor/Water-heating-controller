@@ -2,7 +2,7 @@
 
 class IBuzzerComponent
 {
-  public:
+public:
     virtual ~IBuzzerComponent(){};
     virtual void PlayMelody() = 0;
 };

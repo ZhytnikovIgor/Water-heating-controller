@@ -3,7 +3,7 @@
 
 class IPage
 {
-  public:
+public:
     virtual ~IPage(){};
     virtual void Render() = 0;
     virtual void HandleTouch(Point rawTouchPoint) = 0;

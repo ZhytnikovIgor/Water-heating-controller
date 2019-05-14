@@ -3,7 +3,7 @@
 
 class ILoggerService
 {
-  public:
+public:
     virtual ~ILoggerService(){};
     virtual void Info(String message) = 0;
     virtual void Warning(String message) = 0;

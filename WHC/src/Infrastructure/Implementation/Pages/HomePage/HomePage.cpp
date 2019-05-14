@@ -10,6 +10,5 @@ void HomePage::HandleTouch(Point rawTouchPoint)
 {
     if (_testButton.IsTouched(rawTouchPoint))
     {
-
     }
 }

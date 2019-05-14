@@ -6,7 +6,7 @@
 
 class LiquidCrystalDisplayComponent : public ILiquidCrystalDisplayComponent
 {
-  private:
+private:
     int _displayWidth;
     int _displayHeight;
     long _xMinimum;
@@ -16,7 +16,7 @@ class LiquidCrystalDisplayComponent : public ILiquidCrystalDisplayComponent
     TouchScreen _touchScreen;
     Adafruit_TFTLCD _liquidCrystalDisplay;
 
-  public:
+public:
     LiquidCrystalDisplayComponent(int displayWidth,
                                   int displayHeight,
                                   long xMinimum,

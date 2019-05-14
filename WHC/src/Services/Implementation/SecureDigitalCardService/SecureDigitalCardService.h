@@ -4,10 +4,10 @@
 
 class SecureDigitalCardService : public ISecureDigitalCardService
 {
-  private:
+private:
     ISecureDigitalCardComponent *_secureDigitalCardComponent;
 
-  public:
+public:
     SecureDigitalCardService(ISecureDigitalCardComponent *secureDigitalCardComponent);
     bool IsSecureDigitalCardAvailable();
     void WriteLineToFile(String fileName, String textLine);

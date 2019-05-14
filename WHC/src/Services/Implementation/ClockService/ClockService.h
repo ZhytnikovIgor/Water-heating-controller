@@ -6,11 +6,11 @@
 
 class ClockService : public IClockService
 {
-  private:
+private:
     IClockComponent *_clockComponent;
     String GetTwoDigitsString(uint8_t number);
 
-  public:
+public:
     ClockService(IClockComponent *clockComponent);
     String GetDateTimeString(String pattern);
 };

@@ -3,7 +3,7 @@
 
 class IElement
 {
-  public:
+public:
     virtual ~IElement(){};
     virtual bool IsRendered() = 0;
     virtual bool IsUpdated() = 0;

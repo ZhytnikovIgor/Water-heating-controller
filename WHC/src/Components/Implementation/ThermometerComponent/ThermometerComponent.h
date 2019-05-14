@@ -5,11 +5,11 @@
 
 class ThermometerComponent : public IThermometerComponent
 {
-  private:
+private:
     DallasTemperature _sensor;
     uint8_t *_deviceAddress;
 
-  public:
+public:
     ThermometerComponent(OneWire *oneWire, DeviceAddress deviceAddress);
     float GetTemperature();
 };

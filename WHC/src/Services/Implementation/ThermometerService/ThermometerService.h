@@ -4,10 +4,10 @@
 
 class ThermometerService : public IThermometerService
 {
-  private:
+private:
     IThermometerComponent *_thermometerComponent;
 
-  public:
+public:
     ThermometerService(IThermometerComponent *thermometerComponent);
     float GetThermometerTemperature();
 };

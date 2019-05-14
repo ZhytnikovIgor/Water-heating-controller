@@ -3,7 +3,7 @@
 
 class ISecureDigitalCardService
 {
-  public:
+public:
     virtual ~ISecureDigitalCardService(){};
     virtual bool IsSecureDigitalCardAvailable() = 0;
     virtual void WriteLineToFile(String fileName, String textLine) = 0;

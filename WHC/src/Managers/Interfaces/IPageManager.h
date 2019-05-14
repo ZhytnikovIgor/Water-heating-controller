@@ -4,7 +4,7 @@
 
 class IPageManager
 {
-  public:
+public:
     virtual ~IPageManager(){};
     virtual void SetCurrentPage(IPage *page) = 0;
     virtual void RenderCurrentPage() = 0;

@@ -6,13 +6,13 @@
 
 class LoggerService : public ILoggerService
 {
-  private:
+private:
     String _fileName;
     IClockService *_clockService;
     ISecureDigitalCardService *_secureDigitalCardService;
     String CreateLogMessage(String logType, String message);
 
-  public:
+public:
     LoggerService(String fileName, IClockService *clockService, ISecureDigitalCardService *secureDigitalCardService);
     void Info(String message);
     void Warning(String message);

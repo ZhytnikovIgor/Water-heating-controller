@@ -5,11 +5,11 @@
 
 class SecureDigitalCardComponent : public ISecureDigitalCardComponent
 {
-  private:
+private:
     int _chipSelectPinNumber;
     File _file;
 
-  public:
+public:
     SecureDigitalCardComponent(int chipSelectPinNumber);
     bool IsAvailable();
     void WriteLineToFile(String fileName, String textLine);
