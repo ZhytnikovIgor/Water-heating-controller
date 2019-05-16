@@ -8,13 +8,15 @@ class LoggerService : public ILoggerService
 {
 private:
     String _fileName;
+    bool _isDebug;
     IClockService *_clockService;
     ISecureDigitalCardService *_secureDigitalCardService;
     String CreateLogMessage(String logType, String message);
 
 public:
-    LoggerService(String fileName, IClockService *clockService, ISecureDigitalCardService *secureDigitalCardService);
+    LoggerService(String fileName, bool isDebug, IClockService *clockService, ISecureDigitalCardService *secureDigitalCardService);
     void Info(String message);
     void Warning(String message);
     void Error(String message);
+    void Debug(String message);
 };

@@ -8,4 +8,5 @@ public:
     virtual void Info(String message) = 0;
     virtual void Warning(String message) = 0;
     virtual void Error(String message) = 0;
+    virtual void Debug(String message) = 0;
 };
