@@ -1,4 +1,5 @@
 #pragma once
+#include <WString.h>
 #include "..\..\Interfaces\IThermometerService.h"
 #include "..\..\..\Components\Interfaces\IThermometerComponent.h"
 
@@ -9,5 +10,5 @@ private:
 
 public:
     ThermometerService(IThermometerComponent *thermometerComponent);
-    float GetThermometerTemperature();
+    String GetTemperatureString();
 };

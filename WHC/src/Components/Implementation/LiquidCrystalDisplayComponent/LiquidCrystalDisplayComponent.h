@@ -40,7 +40,7 @@ public:
     void FillRectangle(int16_t x, int16_t y, int16_t width, int16_t height, uint16_t color);
     void DrawRectangle(int16_t x, int16_t y, int16_t width, int16_t height, uint16_t color);
     void SetCursor(uint8_t column, uint8_t row);
-    void SetTextColor(uint16_t color);
+    void SetTextColor(uint16_t color, uint16_t backgroundColor);
     void SetTextSize(uint8_t size);
     void PrintText(String text);
 };

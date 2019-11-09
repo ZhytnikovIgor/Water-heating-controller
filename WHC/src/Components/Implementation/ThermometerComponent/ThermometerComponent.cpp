@@ -12,3 +12,7 @@ float ThermometerComponent::GetTemperature()
     _sensor.requestTemperaturesByAddress(_deviceAddress);
     return _sensor.getTempC(_deviceAddress);
 }
+bool ThermometerComponent::IsAvailable()
+{
+    return _sensor.isConnected(_deviceAddress);
+}

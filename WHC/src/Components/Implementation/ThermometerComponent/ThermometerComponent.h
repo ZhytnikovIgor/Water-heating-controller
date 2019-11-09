@@ -13,4 +13,5 @@ private:
 public:
     ThermometerComponent(OneWire *oneWire, DeviceAddress deviceAddress, ThermometerAccuracy accuracy);
     float GetTemperature();
+    bool IsAvailable();
 };

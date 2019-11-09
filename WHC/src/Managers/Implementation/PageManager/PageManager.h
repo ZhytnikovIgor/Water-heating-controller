@@ -11,7 +11,11 @@ private:
     IPageContext *_pageContext;
 
 public:
-    PageManager(ILiquidCrystalDisplayService *liquidCrystalDisplayService);
+    PageManager(ILiquidCrystalDisplayService *liquidCrystalDisplayService,
+                IThermometerService *upperBoilerThermometerService,
+                IThermometerService *bottomBoilerThermometerService,
+                IThermometerService *roomThermometerService,
+                IClockService *clockService);
     void SetCurrentPage(IPage *page);
     void RenderCurrentPage();
     void HandleCurrentPageTouch(Point rawTouchPoint);

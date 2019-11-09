@@ -96,10 +96,10 @@ void LiquidCrystalDisplayComponent::DrawRectangle(int16_t x, int16_t y, int16_t 
 void LiquidCrystalDisplayComponent::SetCursor(uint8_t column, uint8_t row)
 {
     _liquidCrystalDisplay.setCursor(column, row);
-}
-void LiquidCrystalDisplayComponent::SetTextColor(uint16_t color)
+} 
+void LiquidCrystalDisplayComponent::SetTextColor(uint16_t color, uint16_t backgroundColor)
 {
-    _liquidCrystalDisplay.setTextColor(color);
+    _liquidCrystalDisplay.setTextColor(color, backgroundColor);
 }
 void LiquidCrystalDisplayComponent::SetTextSize(uint8_t size)
 {

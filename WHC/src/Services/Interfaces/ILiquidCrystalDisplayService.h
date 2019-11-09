@@ -16,7 +16,7 @@ public:
     virtual void FillRectangle(int16_t x, int16_t y, int16_t width, int16_t height, uint16_t color) = 0;
     virtual void DrawRectangle(int16_t x, int16_t y, int16_t width, int16_t height, uint16_t color) = 0;
     virtual void SetCursor(uint8_t column, uint8_t row) = 0;
-    virtual void SetTextColor(uint16_t color) = 0;
+    virtual void SetTextColor(uint16_t color, uint16_t backgroundColor) = 0;
     virtual void SetTextSize(uint8_t size) = 0;
     virtual void PrintText(String text) = 0;
 };

@@ -1,8 +1,9 @@
 #pragma once
+#include <WString.h>
 
 class IThermometerService
 {
 public:
     virtual ~IThermometerService(){};
-    virtual float GetThermometerTemperature() = 0;
+    virtual String GetTemperatureString() = 0;
 };

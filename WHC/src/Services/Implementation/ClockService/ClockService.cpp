@@ -9,12 +9,24 @@ ClockService::ClockService(IClockComponent *clockComponent) : _clockComponent(cl
 String ClockService::GetDateTimeString(String pattern)
 {
     StringFormatter formatter(pattern);
-    formatter.SetValue("{month}", GetTwoDigitsString(_clockComponent->GetMonth()));
-    formatter.SetValue("{day}", GetTwoDigitsString(_clockComponent->GetDay()));
-    formatter.SetValue("{year}", (String)_clockComponent->GetYear());
-    formatter.SetValue("{hours}", GetTwoDigitsString(_clockComponent->GetHour()));
-    formatter.SetValue("{minutes}", GetTwoDigitsString(_clockComponent->GetMinute()));
-    formatter.SetValue("{seconds}", GetTwoDigitsString(_clockComponent->GetSecond()));
+
+    if (_clockComponent->IsAvailable())
+    {
+        DateTime currentDateTime = _clockComponent->GetCurrentDateTime();
+
+        formatter.SetValue("{month}", GetTwoDigitsString(currentDateTime.month()));
+        formatter.SetValue("{day}", GetTwoDigitsString(currentDateTime.day()));
+        formatter.SetValue("{year}", (String)currentDateTime.year());
+        formatter.SetValue("{hours}", GetTwoDigitsString(currentDateTime.hour()));
+        formatter.SetValue("{minutes}", GetTwoDigitsString(currentDateTime.minute()));
+        formatter.SetValue("{seconds}", GetTwoDigitsString(currentDateTime.second()));
+    }
+    formatter.SetValue("{month}", "--");
+    formatter.SetValue("{day}", "--");
+    formatter.SetValue("{year}", "----");
+    formatter.SetValue("{hours}", "--");
+    formatter.SetValue("{minutes}", "--");
+    formatter.SetValue("{seconds}", "--");
 
     return formatter.GetFormattedMessage();
 }

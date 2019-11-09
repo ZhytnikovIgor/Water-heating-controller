@@ -33,9 +33,9 @@ void LiquidCrystalDisplayService::SetCursor(uint8_t column, uint8_t row)
 {
     _liquidCrystalDisplayComponent->SetCursor(column, row);
 }
-void LiquidCrystalDisplayService::SetTextColor(uint16_t color)
+void LiquidCrystalDisplayService::SetTextColor(uint16_t color, uint16_t backgroundColor)
 {
-    _liquidCrystalDisplayComponent->SetTextColor(color);
+    _liquidCrystalDisplayComponent->SetTextColor(color, backgroundColor);
 }
 void LiquidCrystalDisplayService::SetTextSize(uint8_t size)
 {
